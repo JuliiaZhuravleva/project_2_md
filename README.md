@@ -7,18 +7,27 @@ Project 2 MD is a command-line tool that extracts the structure and code of a pr
 To install Project 2 MD, follow these steps:
 
 1. Clone the repository:
-
+    ```
     git clone https://github.com/yourusername/project_2_md.git
+   ```
+   ```
     cd project_2_md
+   ```
 
 2. Create and activate a virtual environment (optional but recommended):
 
-python -m venv .venv
-source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+    ```
+    python -m venv .venv
+   ```
+   ```
+    source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+   ```
 
 3. Install the package:
 
-pip install -e .
+    ```
+    pip install -e .
+   ```
 
 ## Updating
 
@@ -26,19 +35,27 @@ If you've already installed Project 2 MD and want to update it to the latest ver
 
 1. Navigate to the project directory:
 
-cd path/to/project_2_md
+    ```
+    cd path/to/project_2_md
+   ```
 
 2. Pull the latest changes:
 
-git pull origin main
+    ```
+    git pull origin main
+   ```
 
 3. Activate your virtual environment (if you're using one):
 
-source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+    ```
+    source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+   ```
 
 4. Reinstall the package:
 
-pip install -e .
+    ```
+    pip install -e .
+   ```
 
 This will update your installation to the latest version of Project 2 MD.
 
@@ -46,43 +63,51 @@ This will update your installation to the latest version of Project 2 MD.
 
 After installation, you can use the project_2_md command from your terminal:
 
-project_2_md [OPTIONS]
+    ```
+    project_2_md [OPTIONS]
+    ```
 
 ### Options:
 
-- -d, --directory DIRECTORY: The path to the project directory you want to extract (default: current directory).
-- -o, --output FILENAME: Specify the output Markdown file name (default: "project_description.md").
-- -i, --ignore [PATTERNS...]: Specify patterns for files or directories to ignore (in addition to default patterns).
-- -e, --extensions [EXTENSIONS...]: Specify file extensions to include (default: [".py", ".js", ".html", ".css"]).
-- -el, --use-export-list: Use a to_export.txt file for specific file export.
+- `-d`, `--directory DIRECTORY`: The path to the project directory you want to extract (default: current directory).
+- `-o`, `--output FILENAME`: Specify the output Markdown file name (default: "project_description.md").
+- `-i`, `--ignore [PATTERNS...]`: Specify patterns for files or directories to ignore (in addition to default patterns).
+- `-e`, `--extensions [EXTENSIONS...]`: Specify file extensions to include (default: [".py", ".js", ".html", ".css"]).
+- `-el`, `--use-export-list`: Use a to_export.txt file for specific file export.
 
 ### Examples:
 
 1. Basic usage (current directory):
 
-project_2_md -o project_overview.md -i .venv node_modules -e .py .js
+    ```
+    project_2_md -o project_overview.md -i .venv node_modules -e .py .js
+   ```
 
-This command will:
-- Extract the structure and code from the current directory
-- Ignore ".venv" and "node_modules" directories (in addition to default ignore patterns)
-- Include only Python (.py) and JavaScript (.js) files
-- Save the output to "project_overview.md"
+    This command will:
+    - Extract the structure and code from the current directory
+    - Ignore ".venv" and "node_modules" directories (in addition to default ignore patterns)
+    - Include only Python (.py) and JavaScript (.js) files
+    - Save the output to "project_overview.md"
 
 2. Specifying a different directory:
 
-project_2_md -d /path/to/your/project -o project_overview.md
+    ```
+    project_2_md -d /path/to/your/project -o project_overview.md
+   ```
 
 3. Using an export list:
 
-project_2_md -el -o specific_files.md
+    ```
+    project_2_md -el -o specific_files.md
+   ```
 
-This command will:
-- Look for a to_export.txt file in the current directory
-- Extract only the files listed in to_export.txt
-- Ignore the -i and -e options if they are provided
-- Save the output to "specific_files.md"
+    This command will:
+   - Look for a to_export.txt file in the current directory
+   - Extract only the files listed in to_export.txt
+   - Ignore the -i and -e options if they are provided
+   - Save the output to "specific_files.md"
 
-Note: The to_export.txt file should contain one relative file path per line, e.g.:
+**Note**: The `to_export.txt` file should contain one relative file path per line, e.g.:
 
 src/main.py
 src/utils.py
